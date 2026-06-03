@@ -5,7 +5,7 @@ bool validAnagram(std::string s1, std::string s2){
     if(s1.size() != s2.size()){
         return false;
     }
-    // here my first though was to create an array that will contian each caharacter of the string
+    // here my first thought was to create an array that will contian each caharacter of the string
     // and while iterating through the sencond string we fill searchg and find the character in the array
     // if present we delete that if not return false and after completing if the array has elements left return false
 
