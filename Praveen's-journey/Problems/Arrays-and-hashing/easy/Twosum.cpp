@@ -7,15 +7,16 @@ int main(){
     int target = 5;
 
     int n = nums.size();
-    std::unordered_map<int, int> prevMap;
+    std::unordered_map<int, int> hashMap;
 
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < nums.size(); i++){
         int diff = target - nums[i];
-        if (prevMap.find(diff) != prevMap.end()) {
-            std::cout << prevMap[diff] << " " << i << '\n';
+        if(hashMap.find(diff) != hashMap.end()){
+            std::cout << hashMap[diff] << " " << i << std::endl;
             return 0;
         }
-        prevMap.insert({nums[i], i});
+        hashMap[nums[i]] = i;
     }
+    std::cout << "No solution" << std::endl;
     return 0;
 }
