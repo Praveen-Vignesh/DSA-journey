@@ -8,37 +8,35 @@
 
 // but sorting this in lexicographical gives O(m * nlog n)
 // this is significantly worse than the O(n*m)')
-#include <iostream>
+#include <iostream> 
 #include <vector>
 #include <string>
 
 using namespace std;
 
-string findPrefix(vector<string> words){
+string findPrefix(vector<string> strs){
 
-    string refWord = words[0];
-    string result;
+    string refWord = strs[0];
+    string result = strs[0];
 
-    for (int i = 0; i < words[0].length(); i++){
+    for (int i = 0; i < strs[0].length(); i++){
 
-        for (int j = 1; j < words.size(); j++){
+        for (int j = 1; j < strs.size(); j++){
 
-            if(i >= words[j].length() || refWord[i] != words[j][i]){
-
-                result = refWord.substr(0, i);
-                return result;
+            if(i >= strs[j].length() || refWord[i] != strs[j][i]){
+ 
+                return refWord.substr(0, i);;
             }
         }
-        result = refWord.substr(0, i);
     }
 
     return result;
 }
 
 int main(){
-    vector<string> words = {"dance", "dag", "danger", "damage"};
+    vector<string> strs = {"dance", "dag", "danger", "damage"};
     
-    string result = findPrefix(words);
+    string result = findPrefix(strs);
 
     cout << result;
 
