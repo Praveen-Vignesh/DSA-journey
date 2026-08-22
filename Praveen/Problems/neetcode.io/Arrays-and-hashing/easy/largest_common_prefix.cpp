@@ -3,7 +3,7 @@
 
 // Approach 1: take one element as refercne and compare all other strings (O(n*m))
 // APproach 2; sort the array in lexicographical format then compare and first and last element 
-//              this works because if the las element matches completely with the first element lets say untill index 3 then all other elements before that also matches the prefix
+//              this works because if the last element matches completely with the first element lets say untill index 3 then all other elements before that also matches the prefix
 
 
 // but sorting this in lexicographical gives O(m * nlog n)
